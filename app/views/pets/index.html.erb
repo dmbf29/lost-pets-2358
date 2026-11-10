@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Lost Pets</h1>
+  <div class="cards">
+    <% @pets.each do |pet| %>
+      <div class="card-product position-relative">
+        <%= image_tag "#{pet.species}.jpeg", alt: "text" %>
+        <div class="card-product-infos">
+          <h2><%= pet.name %></h2>
+          <p><%= pet.address %></p>
+          <p><%= pet.found_on.strftime('%b %d, %Y') %></p>
+        </div>
+        <%= link_to "", pet_path(pet), class: 'position-absolute top-0 bottom-0 w-100'  %>
+      </div>
+    <% end %>
+  </div>
+</div>

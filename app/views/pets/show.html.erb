@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card-product">
+    <%= image_tag "#{@pet.species}.jpeg", alt: "text" %>
+    <div class="card-product-infos">
+      <h2><%= @pet.name %></h2>
+      <p><%= @pet.address %></p>
+      <p><%= @pet.found_on.strftime('%b %d, %Y') %></p>
+    </div>
+  </div>
+  <%= link_to 'All Pets', pets_path, class: 'btn btn-secondary mt-2'  %>
+  <%= link_to pet_path(@pet), class: 'btn btn-secondary mt-2', data: { turbo_method: :delete, turbo_confirm: "Did #{@pet.name} escape through the window?" } do %>
+    <i class="fa-solid fa-person-through-window"></i>
+  <% end %>
+</div>
